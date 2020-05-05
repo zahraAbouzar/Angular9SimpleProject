@@ -1,0 +1,39 @@
+{
+  "companyes": [
+    {
+      "name": "a",
+      "phoneNumber": 1,
+      "type": "1",
+      "id": 1
+    },
+    {
+      "name": "b",
+      "phoneNumber": 2,
+      "type": "2",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "a",
+      "companyId": 1,
+      "createDate": "1399/01/01",
+      "status": "1",
+      "id": 1
+    },
+    {
+      "name": "tv",
+      "companyId": 2,
+      "createDate": "",
+      "status": "",
+      "id": 2
+    },
+    {
+      "name": "fer",
+      "companyId": 2,
+      "createDate": "",
+      "status": "1",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+
+<div class="mainHeader">
+  <img  (click)="toggle()" src="assets/menu.png"  style="height: 29px;
+    margin: 4px 11px;"/>
+ 
+
+</div>
+<div class="mainContainer">
+  <app-nav-menu [ngClass]="{ show: isExpanded, hide:!isExpanded }"></app-nav-menu>
+
+  <router-outlet></router-outlet>
+
+</div>
+

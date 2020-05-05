@@ -1,0 +1,77 @@
+<!--<a class="btn btn-primary btn-lg" routerLink="/">
+  <i class="fa fa-arrow-left"></i> Back
+</a>-->
+<div class="mycontainer">
+
+  <h2>
+    تعریف شرکت:
+  </h2>
+
+  <div>
+    <form id="formNewCompany" name='formNewCompany' #CompanyData="ngForm" (ngSubmit)="addNewCompany(CompanyData.value)">
+      <div class="formRow">
+        <label>نام:</label>
+        <input type="text" name="name" id="name" placeholder="نام" ngModel>
+      </div>
+      <br>
+
+      <div class="formRow">
+        <label>شماره تلفن:</label>
+        <input type="number" name="phoneNumber" id="phoneNumber" placeholder="شماره تلفن" ngModel>
+      </div>
+      <br>
+
+      <div class="formRow">
+        <label>نوع:</label>
+        <select id="type" name="type" ngModel>
+          <option value="1">محصولات غذایی</option>
+          <option value="2">لوازم خانگی</option>
+          <option value="3">لوازم الکترونیکی</option>
+
+        </select>
+      </div>
+      <br>
+      <input class="formRow" type="submit" value="تایید">
+    </form>
+    <h3 *ngIf="isAdded">{{confirmationString}}</h3>
+    <h3 *ngIf="hasError">{{errorString}}</h3>
+  </div>
+
+</div>
+
+<div class="companyList">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header btn-#00e676 green accent-3 text-white">
+            <h2 class="card-title">
+              <i class="fa fa-Company-hunt" aria-hidden="true"></i> لیست شرکت ها:
+            </h2>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead class="blue-grey lighten-4 text-center">
+                <tr>
+
+                  <th>نام</th>
+                  <th>شماره تلفن</th>
+                  <th>نوع</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Company of companyes" class="text-center" (click)="onRowClick(Company)">
+
+
+                  <td>{{Company.name}}</td>
+                  <td>{{Company.phoneNumber}}</td>
+                  <td>{{Company.typeName}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

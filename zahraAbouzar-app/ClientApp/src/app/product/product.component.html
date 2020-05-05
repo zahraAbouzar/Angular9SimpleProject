@@ -1,0 +1,76 @@
+<a class="btn btn-primary btn-lg" routerLink="/company">
+  <i class="fa fa-arrow-left"></i>بازگشت
+</a>
+<div class="mycontainer">
+
+  <h2>
+    تعریف محصول:
+  </h2>
+
+  <div>
+    <form id="formNewProduct" name='formNewProduct' #ProductData="ngForm" (ngSubmit)="addNewProduct(ProductData.value)">
+      <div class="formRow">
+        <label>نام:</label>
+        <input type="text" name="name" id="name" placeholder="نام" ngModel>
+      </div>
+      <br>
+
+      <div class="formRow">
+        <label>تاریخ ایجاد:</label>
+        <input  name="createDate" id="createDate" placeholder="تاریخ ایجاد" ngModel>
+      </div>
+      <br>
+
+      <div class="formRow">
+        <label>وضعیت:</label>
+        <select id="status" name="status" ngModel>
+          <option value="1">فعال</option>
+          <option value="2">غیرفعال</option>
+         
+
+        </select>
+      </div>
+      <br>
+      <input class="formRow" type="submit" value="تایید">
+    </form>
+    <h3 *ngIf="isAdded">{{confirmationString}}</h3>
+  </div>
+
+</div>
+
+<div class="ProductList">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="">
+            <h2 class="">
+              <i class="fa fa-Product-hunt" aria-hidden="true"></i> لیست محصولات:
+            </h2>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead class="blue-grey lighten-4 text-center">
+                <tr>
+
+                  <th>نام</th>
+                  <th>تاریخ ایجاد</th>
+                  <th>وضعیت</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products" class="text-center" click="onRowClick(product)">
+
+
+                  <td>{{product.name}}</td>
+                  <td>{{product.createDate}}</td>
+                  <td>{{product.statusName}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "ClientApp/src/app/company/company.component.css",
+    "inputFile": "ClientApp/src/app/company/company.component.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/globalComponentsStyle.css",
+    "inputFile": "ClientApp/src/app/globalComponentsStyle.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/product/product.component.css",
+    "inputFile": "ClientApp/src/app/product/product.component.scss"
+  }
+]
